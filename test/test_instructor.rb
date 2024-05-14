@@ -28,5 +28,14 @@ module MatCalendar
         expect(schedule[:lessons]).must_include(@lesson)
       end
     end
+
+    describe "#to_json" do
+      it "serializes the name" do
+        json = @instructor.to_json
+
+        actual = JSON.parse(json)
+        expect(actual["name"]).must_equal(@instructor.name)
+      end
+    end
   end
 end

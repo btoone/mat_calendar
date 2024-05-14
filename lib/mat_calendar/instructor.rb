@@ -30,5 +30,11 @@ module MatCalendar
     def schedule
       {lessons: @lessons}
     end
+
+    def to_json(*_args)
+      {
+        name: @name
+      }.to_json
+    end
   end
 end
