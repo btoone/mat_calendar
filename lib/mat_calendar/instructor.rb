@@ -13,36 +13,22 @@ module MatCalendar
     # schedule = {
     #   lessons: [
     #     {
-    #       lesson: {name: "Lesson: 1"},
-    #       instructor: @instructor,
+    #       name: {name: "Lesson: 1"},
+    #       instructors: [@instructor],
     #       time: Time.now.utc
     #     },
     #     {
-    #       lesson: {name: "Lesson: 2"},
-    #       instructor: @instructor,
+    #       name: {name: "Lesson: 2"},
+    #       instructors: [@instructor],
     #       time: Time.now.utc
     #     }
     #   ]
     # } 
     # TODO lessons grouped by day
+    # TODO defaults to the current month
     def schedule
-      {lessons: annotate_lessons}
+      {lessons: @lessons}
     end
 
-    private
-
-    # TODO create a schedule object that returns lessons as scheduled_lessons 
-    #      (aka classes)
-    # TODO where do I get the time data from?
-    # it "#schedule defaults to the current month"
-    # it "#schedule includes the dates of the lessons"
-    def annotate_lessons
-      @lessons.map do |lesson|
-        {
-          lesson: lesson,
-          instructor: self,
-        }
-      end
-    end
   end
 end

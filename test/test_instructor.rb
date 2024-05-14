@@ -12,7 +12,7 @@ module MatCalendar
 
     describe "#schedule" do
       before do
-        @lesson = Lesson.new(name: "Lesson 1")
+        @lesson = Lesson.new(name: "Lesson 1", instructors: [@instructor], time: nil)
       end
 
       it "converts to JSON format" do
@@ -21,15 +21,12 @@ module MatCalendar
         expect(actual.keys).must_include("lessons")
       end
 
-      it "#schedule includes the lessons" do
+      it "includes the lessons" do
         @instructor.lessons << @lesson
 
         schedule = @instructor.schedule
-        scheduled_lesson = schedule[:lessons].first
-        expect(scheduled_lesson[:lesson]).must_equal(@lesson)
+        expect(schedule[:lessons]).must_include(@lesson)
       end
     end
   end
 end
-
-
