@@ -26,6 +26,7 @@ module MatCalendar
     # } 
     # TODO lessons grouped by day
     # TODO defaults to the current month
+    # TODO bi-directional linking
     def schedule
       {lessons: @lessons}
     end

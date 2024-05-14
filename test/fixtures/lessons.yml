@@ -1,0 +1,15 @@
+--- 
+- !ruby/object:MatCalendar::Lesson
+  name: Lesson 1
+  instructors:
+  - !ruby/object:MatCalendar::Instructor
+    name: Alice Appleton
+    lessons: []
+  course: Course 1
+- !ruby/object:MatCalendar::Lesson
+  name: Lesson 1
+  instructors:
+  - !ruby/object:MatCalendar::Instructor
+    name: Bob Bobington
+    lessons: []
+  course: Course 2

@@ -3,14 +3,23 @@
 
 require "bundler/setup"
 require "mat_calendar"
+require "yaml"
 
 # You can add fixtures and/or initialization code here to make experimenting
 # with your gem easier. You can also use a different console, if you like.
+
+root_dir = File.expand_path('../..', __FILE__)
+
+instructors_path = File.join(root_dir, "test/fixtures/instructors.yml")
+@instructors  = YAML.safe_load(File.read(instructors_path), permitted_classes: [MatCalendar::Instructor, MatCalendar::Lesson])
+
+lessons_path = File.join(root_dir, "test/fixtures/lessons.yml")
+@lessons = YAML.safe_load(File.read(lessons_path), permitted_classes: [MatCalendar::Instructor, MatCalendar::Lesson])
 
 # (If you use this, don't forget to add pry to your Gemfile!)
 require "pry"
 require "pry-doc"
 Pry.start
 
-require "irb"
-IRB.start(__FILE__)
+# require "irb"
+# IRB.start(__FILE__)
