@@ -29,6 +29,5 @@ module MatCalendar
     def schedule
       {lessons: @lessons}
     end
-
   end
 end

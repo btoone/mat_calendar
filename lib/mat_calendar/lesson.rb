@@ -1,11 +1,11 @@
 module MatCalendar
   class Lesson
-    attr_accessor :name
-    attr_reader :instructors
+    attr_accessor :name, :instructors, :course
 
-    def initialize(name)
+    def initialize(name:, course: nil, instructors: [], time: nil)
       @name = name
-      @instructors = []
+      @instructors = instructors 
+      @course = course
     end
   end
 end

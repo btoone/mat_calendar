@@ -12,7 +12,7 @@ module MatCalendar
 
     describe "#schedule" do
       before do
-        @lesson = Lesson.new(name: "Lesson 1", instructors: [@instructor], time: nil)
+        @lesson = Lesson.new(name: "Lesson 1")
       end
 
       it "converts to JSON format" do
