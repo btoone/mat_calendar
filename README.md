@@ -1,6 +1,6 @@
 # Mat Calendar
 
-## Testing
+## TODO
 
 ```shell
 ack -l --type=ruby matcalendar | entr -c rake test
